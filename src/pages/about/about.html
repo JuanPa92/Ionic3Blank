@@ -1,0 +1,56 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{user | myPipe}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="wrapper">
+    <div class="wrapper-info"
+    *ngFor="let course of data.courses | slice:0:3 ; let i = index;"
+    [ngClass]="{
+      'course-one': i === 0,
+      'course-two': i === 1,
+      'course-three': i === 2
+    }">
+      <h1>Curso: {{course}}</h1>
+      <h1>Nombre: {{user | uppercase}}</h1>
+      <h1>Date: {{data.date | date: 'dd MM yyyy'}}</h1>
+      <h1>Precio: {{data.money | currency:'MXN'}}</h1>
+    </div>
+  </div>
+</ion-content>
+
+<!--
+<h1> {{data.date | date:"MM dd yyyy"}} </h1>
+  <h1> {{data.money | number:'3.5'}} </h1>
+
+  <ion-list>
+      <ion-item 
+      *ngFor="let course of data.courses; let i = index">
+        <ion-label [color]="(i%2) == 0 ? 'primary' : 'danger'">{{course}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+  <button
+  ion-button
+  round
+  (click)="goBack()"
+  >
+    Regresar
+  </button>
+
+  <button
+    (click)="goCustomer()" 
+    [color]="colorLabel"
+    ion-button
+    round>
+      Customer
+    </button> 
+    --> 

@@ -7,8 +7,49 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <form class="wrapper" [formGroup]="loginForm">
+    <ion-item>
+      <ion-label fixed>Usuario</ion-label>
+      <ion-input formControlName="user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type="password" formControlName="pwd"></ion-input>
+    </ion-item>
+    <button
+    ion-button
+    round
+    [color]="loginForm.valid ? 'primary' : 'danger'"
+    (click)="login()">Login</button>
+  </form>
 </ion-content>
+
+<!--
+  <h1>Curso Ionic 4</h1>
+  <ion-item>
+    <ion-label floating>Usuario</ion-label>
+    <ion-input [(ngModel)]="user" value=""></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Grupo</ion-label>
+      <ion-input [(ngModel)]="group" value=""></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Money</ion-label>
+      <ion-input [(ngModel)]="money" value=""></ion-input>
+  </ion-item>
+
+  <div class="wrapper">
+    <button (click)="goAbout()" ion-button round>About</button>
+  </div>
+
+  <div>
+    <h1>
+      Usuario => {{user}}
+    </h1>
+    <h1>
+      Grupo => {{group}}
+    </h1>
+  </div>
+
+-->

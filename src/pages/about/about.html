@@ -6,26 +6,17 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>{{user | myPipe}}</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div class="wrapper">
-    <div class="wrapper-info"
-    *ngFor="let course of data.courses | slice:0:3 ; let i = index;"
-    [ngClass]="{
-      'course-one': i === 0,
-      'course-two': i === 1,
-      'course-three': i === 2
-    }">
-      <h1>Curso: {{course}}</h1>
-      <h1>Nombre: {{user | uppercase}}</h1>
-      <h1>Date: {{data.date | date: 'dd MM yyyy'}}</h1>
-      <h1>Precio: {{data.money | currency:'MXN'}}</h1>
-    </div>
-  </div>
+    <car
+        *ngFor="let item of students"
+        [student]="item"
+        (click-card)="deleteCard($event)"></car>
 </ion-content>
+
 
 <!--
 <h1> {{data.date | date:"MM dd yyyy"}} </h1>

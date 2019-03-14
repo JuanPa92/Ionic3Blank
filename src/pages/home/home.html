@@ -1,13 +1,14 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Login
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <form class="wrapper" [formGroup]="loginForm">
+    <h1>Login</h1>
     <ion-item>
       <ion-label fixed>Usuario</ion-label>
       <ion-input formControlName="user"></ion-input>
@@ -22,6 +23,10 @@
     [color]="loginForm.valid ? 'primary' : 'danger'"
     (click)="login()">Login</button>
   </form>
+  <br>
+  <button ion-button clear round (click)="goCreateAccount()">
+    Crear cuenta
+  </button>
 </ion-content>
 
 <!--
